@@ -1,0 +1,38 @@
+#version: '3.9'
+
+services:
+
+  postgres:
+    image: postgres
+    restart: always
+    volumes:
+       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+       - Messaging-vol:/var/lib/postgresql/data
+    env_file: .env
+    environment:
+      PGDATA: /var/lib/postgresql/data/pgdata
+    ports:
+        - ${POSTGRES_PORT}:5432
+        #- 5432:5432
+
+  api:
+    build: 
+      dockerfile: ./src/Messaging.Api/Dockerfile
+    env_file: .env
+    environment:
+      ASPNETCORE_URLS: http://+:80
+      POSTGRES_HOST: postgres
+    ports:
+      - ${BACKEND_HTTP_PORT}:80
+
+  web:
+    build:
+      dockerfile: ./src/Messaging.Web/Dockerfile
+    env_file: .env
+    environment:
+      ASPNETCORE_URLS: http://+:2345
+    ports:
+        - ${WEB_HTTP_PORT}:2345
+
+volumes:
+    Messaging-vol:

@@ -1,0 +1,54 @@
+﻿@page "/Listen"
+@model IndexModel
+@{
+    ViewData["Title"] = "Listen page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Сообщения:</h1>
+    <table class="text-center table table-Primary table-striped">
+        <thead>
+            <tr>
+                <th>Время</th>
+                <th>Номер</th>
+                <th>Сообщение</th>
+            </tr>
+        </thead>
+        <tbody id="messages">
+
+        </tbody>
+    </table>
+</div>
+
+@section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/6.0.1/signalr.js"></script>
+    <script>
+        const hunUrl = '@Model.hubUrl'
+        const hubConnection = new signalR.HubConnectionBuilder()
+            .withUrl(hunUrl, { transport: signalR.HttpTransportType.WebSockets,  withCredentials: false })
+            .build();
+        let messages = document.getElementById('messages');
+        hubConnection.on("Receive", function (message) {
+            console.log(message)
+            let text = document.createElement('td')
+            text.innerText = message.message
+            let number = document.createElement('td')
+            number.innerText = message.number
+            let dateTime = document.createElement('td')
+            dateTime.innerText = message.dateTime.slice(0,message.dateTime.length-4).replace('T',' ')
+            let row = document.createElement('tr')
+            row.appendChild(dateTime)
+            row.appendChild(number)
+            row.appendChild(text)
+            messages.appendChild(row)
+        });
+        hubConnection.start()
+            .then(function () {
+                console.info("Успешное подключение")
+            })
+            .catch(function (err) {
+                console.log(err)
+                return console.error(err.toString());
+            });
+    </script>
+}

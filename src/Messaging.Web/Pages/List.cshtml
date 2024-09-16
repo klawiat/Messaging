@@ -1,0 +1,33 @@
+﻿@page
+@model Messaging.Web.Pages.ListModel
+@{
+    ViewData["Title"] = "List page";
+}
+<div class="text-center">
+    <h1 class="display-4">Сообщения за 10 минут:</h1>
+    @if(Model.Messages.Any()){
+        <table class="text-center table table-Primary table-striped">
+            <thead>
+                <tr>
+                    <th>Время</th>
+                    <th>Номер</th>
+                    <th>Сообщение</th>
+                </tr>
+            </thead>
+            <tbody >
+                @foreach (var message in Model.Messages)
+                {
+                    <tr>
+                        <td>@message.DateTime.ToString("dd/MM/yyyy HH:mm:ss")</td>
+                        <td>@message.Number</td>
+                        <td>@message.Message</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <h4 class="display-6">Сообщений нет!</h4>
+    }
+</div>

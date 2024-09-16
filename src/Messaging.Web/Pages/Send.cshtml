@@ -1,0 +1,25 @@
+﻿@page
+@model Messaging.Web.Pages.SendModel
+@{
+    ViewData["Title"] = "Send page";
+}
+<div>
+    <h1 class="display-4 align-self-center">Отправка сообщений:</h1>
+    <form class="form" asp-page="Send" asp-page-handler="OnPost">
+        <div asp-validation-summary="All"></div>
+        <div class="mb-3">
+            <label class="form-label">Текст</label>
+            <input class="form-control" asp-for="Request.Text" />
+            <span asp-validation-for="Request.Text"></span>
+        </div>
+        <div class="mb-3">
+            <label>Порядковый номер</label>
+            <input class="form-control" asp-for="Request.Number" />
+            <span asp-validation-for="Request.Number"></span>
+        </div>
+        <input type="submit" value="Отправить" class="btn btn-primary" />
+    </form>
+</div>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

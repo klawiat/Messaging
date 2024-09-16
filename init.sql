@@ -1,0 +1,2 @@
+CREATE TABLE IF NOT EXISTS MESSAGES (id serial PRIMARY KEY, Text varchar(128) NOT NULL, DateTime timestamp without time zone, Number integer NOT NULL);
+CREATE UNIQUE INDEX IF NOT EXISTS MessageNumberIndex ON MESSAGES (Number);
