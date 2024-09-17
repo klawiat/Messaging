@@ -4,16 +4,18 @@
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
 USER app
 WORKDIR /app
-#EXPOSE 8080
-#EXPOSE 8081
+EXPOSE 8080
+EXPOSE 8081
 
 
 # Этот этап используется для сборки проекта службы
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["src/Messaging.Web/Messaging.Web.csproj", "Messaging.Web/"]
-RUN dotnet restore "./Messaging.Web/Messaging.Web.csproj"
+COPY ["./src/Messaging.Web/Messaging.Web.csproj", "src/Messaging.Web/"]
+COPY ["./src/Messaging.Models/Messaging.Models.csproj", "src/Messaging.Models/"]
+COPY ["./src/Messages.Dal/Messaging.Dal.csproj", "src/Messages.Dal/"]
+RUN dotnet restore "./src/Messaging.Web/Messaging.Web.csproj"
 COPY ./src/ .
 WORKDIR "/src/Messaging.Web"
 RUN dotnet build "./Messaging.Web.csproj" -c $BUILD_CONFIGURATION -o /app/build

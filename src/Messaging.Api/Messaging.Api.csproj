@@ -6,6 +6,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>6b9fcaa5-a841-4028-911d-f05b9df9093c</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>..\..</DockerfileContext>
   </PropertyGroup>
 
   <ItemGroup>
@@ -17,6 +18,12 @@
     <PackageReference Include="Serilog.AspNetCore" Version="8.0.2" />
     <PackageReference Include="Serilog.Sinks.Console" Version="6.0.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.7.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Messages.Dal\Messaging.Dal.csproj" />
+    <ProjectReference Include="..\Messages.Services\Messaging.Services.csproj" />
+    <ProjectReference Include="..\Messaging.Models\Messaging.Models.csproj" />
   </ItemGroup>
 
 </Project>

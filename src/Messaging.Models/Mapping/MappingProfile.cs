@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using System.Reflection;
 
-namespace Messaging.Api.Mapping
+namespace Messaging.Models.Mapping
 {
     public class MappingProfile : Profile
     {

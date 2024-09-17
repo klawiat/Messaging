@@ -1,4 +1,4 @@
-﻿namespace Messaging.Api.Data.Exceptions
+﻿namespace Messaging.Dal.Data.Exceptions
 {
     public class CommandExecutionException : DataLayerException
     {

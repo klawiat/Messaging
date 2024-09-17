@@ -1,6 +1,6 @@
-﻿using Messaging.Api.Models.Entities.BaseEntities;
+﻿using Messaging.Dal.Models.Entities.BaseEntities;
 
-namespace Messaging.Api.Models.Entities
+namespace Messaging.Dal.Models.Entities
 {
     public class Message : BaseEntity
     {

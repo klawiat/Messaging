@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Messaging.Api.Controllers.Base;
-using Messaging.Api.Data.Exceptions;
+using Messaging.Dal.Data.Exceptions;
 using Microsoft.AspNetCore.Mvc;
 using Npgsql;
 using System.Net;

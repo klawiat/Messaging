@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using Messaging.Api.Mapping;
-using Messaging.Api.Models.Entities;
+using Messaging.Dal.Models.Entities;
+using Messaging.Models.Mapping;
 
-namespace Messaging.Api.Models.ViewModels
+namespace Messaging.Models.Models.ViewModels
 {
     public class MessageViewModel : IMapWith<Message>
     {

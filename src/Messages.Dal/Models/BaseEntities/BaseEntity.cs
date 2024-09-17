@@ -1,4 +1,4 @@
-﻿namespace Messaging.Api.Models.Entities.BaseEntities
+﻿namespace Messaging.Dal.Models.Entities.BaseEntities
 {
     public abstract class BaseEntity
     {

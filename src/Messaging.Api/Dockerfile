@@ -12,8 +12,11 @@ WORKDIR /app
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["src/Messaging.Api/Messaging.Api.csproj", "Messaging.Api/"]
-RUN dotnet restore "./Messaging.Api/Messaging.Api.csproj"
+COPY ["./src/Messaging.Api/Messaging.Api.csproj", "src/Messaging.Api/"]
+COPY ["./src/Messages.Dal/Messaging.Dal.csproj", "src/Messages.Dal/"]
+COPY ["./src/Messages.Services/Messaging.Services.csproj", "src/Messages.Services/"]
+COPY ["./src/Messaging.Models/Messaging.Models.csproj", "src/Messaging.Models/"]
+RUN dotnet restore "./src/Messaging.Api/Messaging.Api.csproj"
 COPY ./src/ .
 WORKDIR "/src/Messaging.Api"
 RUN dotnet build "./Messaging.Api.csproj" -c $BUILD_CONFIGURATION -o /app/build

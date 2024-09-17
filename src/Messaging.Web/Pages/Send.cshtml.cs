@@ -1,3 +1,4 @@
+using Messaging.Models.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.ComponentModel;
@@ -29,7 +30,6 @@ namespace Messaging.Web.Pages
             _logger.LogInformation(JsonSerializer.Serialize(responce.RequestMessage.RequestUri));
             if (responce.IsSuccessStatusCode || responce.StatusCode == HttpStatusCode.NoContent)
             {
-                //Redirect("/Send");
                 return new RedirectResult("/Send");
             }
             
@@ -40,15 +40,6 @@ namespace Messaging.Web.Pages
             else
                 ModelState.AddModelError("", problem.Title);
             return new PageResult();
-        }
-        public class SendMessageRequest
-        {
-            [Required(ErrorMessage = "Обязательное свойство")]
-            [DisplayName("Текст сообщения")]
-            [StringLength(128, ErrorMessage = "Строка не может быть длиннее 128 символов")]
-            public string Text { get; set; }
-            [DisplayName("Порядковый номер")]
-            public int Number { get; set; }
         }
     }
 }

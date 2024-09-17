@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 
-namespace Messaging.Api.Mapping
+namespace Messaging.Models.Mapping
 {
     public interface IMapWith<T>
     {

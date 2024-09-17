@@ -1,4 +1,4 @@
-﻿using Messaging.Api.Models.ViewModels;
+﻿using Messaging.Models.Models.ViewModels;
 using Microsoft.AspNetCore.SignalR;
 
 namespace Messaging.Api.Hubs

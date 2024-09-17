@@ -1,5 +1,5 @@
 ﻿
-namespace Messaging.Api.Data.Exceptions
+namespace Messaging.Dal.Data.Exceptions
 {
     public class ValueСonflictException : DataLayerException
     {

@@ -1,6 +1,6 @@
 ﻿using Npgsql;
 
-namespace Messaging.Api.Data.Repos.Base
+namespace Messaging.Dal.Data.Repos.Base
 {
     public abstract class BaseRepo
     {

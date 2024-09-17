@@ -1,10 +1,10 @@
-﻿using Messaging.Api.Data.Exceptions;
-using Messaging.Api.Data.Repos.Base;
-using Messaging.Api.Data.Repos.Interfaces;
-using Messaging.Api.Models.Entities;
+﻿using Messaging.Dal.Data.Exceptions;
+using Messaging.Dal.Data.Repos.Base;
+using Messaging.Dal.Data.Repos.Interfaces;
+using Messaging.Dal.Models.Entities;
 using Npgsql;
 
-namespace Messaging.Api.Data.Repos
+namespace Messaging.Dal.Data.Repos
 {
     public class MessageRepos : BaseRepo, IMessageRepos
     {

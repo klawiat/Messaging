@@ -14,7 +14,7 @@ namespace Messaging.Web
             });
             //string apiUrl = "http://localhost:"+ builder.Configuration["BACKEND_HTTP_PORT_LOCAL"]?.ToString() ?? "80";
             string ahiHost = builder.Configuration["BACKEND_HOST"]?.ToString().TrimEnd('/') ?? "localhost";
-            string apiPort = builder.Configuration["BACKEND_HTTP_PORT_LOCAL"]?.ToString() ?? "80";
+            string apiPort = builder.Configuration["BACKEND_HTTP_PORT_LOCAL"]?.ToString() ?? "5004";
             builder.Services.AddHttpClient("Messaging.Api", client =>
             {
                 client.BaseAddress =

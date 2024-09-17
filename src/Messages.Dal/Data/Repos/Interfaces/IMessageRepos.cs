@@ -1,6 +1,6 @@
-﻿using Messaging.Api.Models.Entities;
+﻿using Messaging.Dal.Models.Entities;
 
-namespace Messaging.Api.Data.Repos.Interfaces
+namespace Messaging.Dal.Data.Repos.Interfaces
 {
     public interface IMessageRepos
     {
