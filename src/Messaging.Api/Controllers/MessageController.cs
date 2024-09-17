@@ -1,15 +1,11 @@
 ﻿using AutoMapper;
+using Messages.Services.Services.Interfaces;
 using Messaging.Api.Controllers.Base;
-using Messaging.Dal.Data.Repos.Interfaces;
 using Messaging.Api.Hubs;
-using Messaging.Models.Mapping;
-using Messaging.Dal.Models.Entities;
+using Messaging.Dal.Data.Repos.Interfaces;
 using Messaging.Models.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;
-using System.ComponentModel.DataAnnotations;
-using System.Text.Json;
-using Messages.Services.Services.Interfaces;
 
 namespace Messaging.Api.Controllers
 {

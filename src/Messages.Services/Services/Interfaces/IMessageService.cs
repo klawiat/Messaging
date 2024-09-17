@@ -1,13 +1,4 @@
-﻿using AutoMapper;
-using Messaging.Dal.Data.Repos.Interfaces;
-using Messaging.Models.Models.ViewModels;
-using Messaging.Services.Services;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Messaging.Models.Models.ViewModels;
 
 namespace Messages.Services.Services.Interfaces
 {

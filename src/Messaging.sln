@@ -7,11 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Messaging.Api", "Messaging.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Messaging.Web", "Messaging.Web\Messaging.Web.csproj", "{7D495AF4-FEBF-4030-A344-758DED4D71A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Messaging.Dal", "Messages.Dal\Messaging.Dal.csproj", "{846A003E-1647-4305-A904-B34CD5D178AC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Messaging.Dal", "Messages.Dal\Messaging.Dal.csproj", "{846A003E-1647-4305-A904-B34CD5D178AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Messaging.Services", "Messages.Services\Messaging.Services.csproj", "{13964BD8-E019-4494-B6AE-AE354822CFA8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Messaging.Services", "Messages.Services\Messaging.Services.csproj", "{13964BD8-E019-4494-B6AE-AE354822CFA8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Messaging.Models", "Messaging.Models\Messaging.Models.csproj", "{7E41E8D4-FAD3-464B-AFEB-3CE4B5772F7A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Messaging.Models", "Messaging.Models\Messaging.Models.csproj", "{7E41E8D4-FAD3-464B-AFEB-3CE4B5772F7A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

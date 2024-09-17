@@ -1,15 +1,14 @@
+using Messages.Services.Services.Interfaces;
+using Messaging.Api.Hubs;
 using Messaging.Dal.Data.Repos;
 using Messaging.Dal.Data.Repos.Interfaces;
-using Messaging.Api.Hubs;
+using Messaging.Models.Models.ViewModels;
+using Messaging.Services.Services;
 using Microsoft.AspNetCore.Http.Connections;
 using Microsoft.OpenApi.Models;
 using Npgsql;
 using Serilog;
 using System.Reflection;
-using Messaging.Dal.Models.Entities;
-using Messages.Services.Services.Interfaces;
-using Messaging.Services.Services;
-using Messaging.Models.Models.ViewModels;
 
 namespace Messaging.Api
 {
@@ -40,7 +39,7 @@ namespace Messaging.Api
                 #endregion
                 #region Services
                 builder.Services.AddSignalR();
-                builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly(),typeof(SendMessageRequest).Assembly);
+                builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly(), typeof(SendMessageRequest).Assembly);
                 builder.Services.AddTransient<NpgsqlConnection>((a) => new NpgsqlConnection(connectionBuilder.ConnectionString));
                 builder.Services.AddTransient<IMessageRepos, MessageRepos>();
                 builder.Services.AddTransient<IMessageService, MessageService>();

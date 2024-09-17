@@ -9,8 +9,8 @@ namespace Messaging.Web.Pages
         public IndexModel(ILogger<IndexModel> logger, IConfiguration configuration)
         {
             _logger = logger;
-            string ahiHost= configuration["API_URL"]?.ToString().TrimEnd('/') ?? @"http://localhost";
-            string apiPort= configuration["BACKEND_HTTP_PORT"]?.ToString() ?? "5004";
+            string ahiHost = configuration["API_URL"]?.ToString().TrimEnd('/') ?? @"http://localhost";
+            string apiPort = configuration["BACKEND_HTTP_PORT"]?.ToString() ?? "5004";
             hubUrl = $"{ahiHost}:{apiPort}/messages";
         }
 

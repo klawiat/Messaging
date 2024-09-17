@@ -1,8 +1,6 @@
 using Messaging.Models.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
 using System.Net;
 using System.Text.Json;
 
@@ -32,7 +30,7 @@ namespace Messaging.Web.Pages
             {
                 return new RedirectResult("/Send");
             }
-            
+
             var problem = await responce.Content.ReadFromJsonAsync<ProblemDetails>();
 
             if (responce.StatusCode == HttpStatusCode.Conflict || responce.StatusCode == HttpStatusCode.BadRequest)
